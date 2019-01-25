@@ -6,6 +6,7 @@ dependencies:
   helmet: 3.15.0
   mongodb: 2.2.36
   passport: 0.3.2
+  passport-github: 1.1.0
   passport-local: 1.0.0
   pug: 2.0.3
 packages:
@@ -597,6 +598,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ICtIAhoMTL3i34DeFaF0Q8i0OYA=
+  /oauth/0.9.15:
+    dev: false
+    resolution:
+      integrity: sha1-vR/vr2hslrdUda7VGWQS/2DPucE=
   /object-assign/4.1.1:
     dev: false
     engines:
@@ -623,6 +628,14 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-/CidTtiZMRlGDBViUyYs3I3mW/M=
+  /passport-github/1.1.0:
+    dependencies:
+      passport-oauth2: 1.4.0
+    dev: false
+    engines:
+      node: '>= 0.4.0'
+    resolution:
+      integrity: sha1-jOHj/NYa11eOsd9ZWDnkrqEjVdQ=
   /passport-local/1.0.0:
     dependencies:
       passport-strategy: 1.0.0
@@ -631,6 +644,17 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha1-H+YyaMkudWBmJkN+O5BmYsFbpu4=
+  /passport-oauth2/1.4.0:
+    dependencies:
+      oauth: 0.9.15
+      passport-strategy: 1.0.0
+      uid2: 0.0.3
+      utils-merge: 1.0.1
+    dev: false
+    engines:
+      node: '>= 0.4.0'
+    resolution:
+      integrity: sha1-9i+BWDy+EmCb585vFguTlaJ7hq0=
   /passport-strategy/1.0.0:
     dev: false
     engines:
@@ -978,6 +1002,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA==
+  /uid2/0.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-SDEm4Rd03y9xuLY53NeZw3YWK4I=
   /unpipe/1.0.0:
     dev: false
     engines:
@@ -1049,5 +1077,6 @@ specifiers:
   helmet: ^3.4.0
   mongodb: ^2.2.22
   passport: ^0.3.2
+  passport-github: ^1.1.0
   passport-local: ^1.0.0
   pug: ^2.0.0
