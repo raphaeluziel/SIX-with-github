@@ -36,18 +36,19 @@
 'use strict';
 
 const fs = require('fs');
+const cors = require('cors');
 
-const allowedOriginsMatcher = /^https?:\/\/([\w-]+\.)*freecodecamp.org/;
+const allowedOriginsMatcher = /^https?:\/\/([\w-]+\.)*freecodecamp\.org/;
 
 module.exports = function (app) {
   
   app.use(function (req, res, next) {
-      const origin = req.get('origin');
-      if (allowedOriginsMatcher.test(origin)) {
-            res.setHeader('Access-Control-Allow-Origin', origin);
-      }
-      res.setHeader('Access-Control-Allow-Credentials', true);
-      next();
+    const origin = req.get('origin');
+    if(allowedOriginsMatcher.test(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
   });
   
   app.route('/_api/server.js')
@@ -58,7 +59,7 @@ module.exports = function (app) {
         res.send(data.toString());
       });
     });
-  
+    
   app.route('/_api/package.json')
     .get(function(req, res, next) {
       console.log('requested');
@@ -66,8 +67,8 @@ module.exports = function (app) {
         if(err) return next(err);
         res.type('txt').send(data.toString());
       });
-    });  
-    
+    });
+
   app.get('/_api/app-info', function(req, res) {
     var hs = Object.keys(res._headers)
       .filter(h => !h.match(/^access-control-\w+/));
